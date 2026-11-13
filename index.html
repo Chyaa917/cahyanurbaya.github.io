@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portofolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#content">Lewati ke konten</a>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="profile">
+        <div class="avatar" id="avatar"></div>
+        <div>
+          <h1 class="name" id="name"></h1>
+          <p class="role" id="role"></p>
+        </div>
+        <button class="toggle" id="toggle" type="button" aria-expanded="false" aria-controls="more">Tampilkan kontak</button>
+      </div>
+      <div class="more" id="more">
+        <ul class="contacts" id="contacts"></ul>
+        <div class="socials" id="socials"></div>
+      </div>
+    </aside>
+
+    <div class="content" id="content">
+      <nav class="tabs" aria-label="Navigasi utama">
+        <button type="button" data-nav="about">Tentang</button>
+        <button type="button" data-nav="resume">Resume</button>
+        <button type="button" data-nav="portfolio">Portofolio</button>
+        <button type="button" data-nav="contact">Kontak</button>
+      </nav>
+
+      <article class="card page" data-page="about">
+        <h2>Tentang saya</h2>
+        <div class="about-text" id="about-text"></div>
+        <h3>Layanan</h3>
+        <ul class="services" id="services"></ul>
+      </article>
+
+      <article class="card page" data-page="resume" hidden>
+        <h2>Resume</h2>
+        <h3>Pendidikan</h3>
+        <ol class="timeline" id="education"></ol>
+        <h3>Pengalaman</h3>
+        <ol class="timeline" id="experience"></ol>
+        <h3>Keahlian</h3>
+        <ul class="skills" id="skills"></ul>
+      </article>
+
+      <article class="card page" data-page="portfolio" hidden>
+        <h2>Portofolio</h2>
+        <p class="lead">Pilih kategori untuk menyaring karya, lalu klik karya untuk melihat detailnya.</p>
+        <div class="filters" id="filters" role="group" aria-label="Filter kategori"></div>
+        <ul class="projects" id="projects"></ul>
+      </article>
+
+      <article class="card page" data-page="contact" hidden>
+        <h2>Kontak</h2>
+        <p class="lead">Isi form di bawah. Aplikasi email Anda akan terbuka dengan pesan yang sudah siap dikirim.</p>
+        <form class="form" id="form">
+          <input type="text" name="fullname" placeholder="Nama lengkap" autocomplete="name" required>
+          <input type="email" name="email" placeholder="Alamat email" autocomplete="email" required>
+          <textarea name="message" placeholder="Pesan Anda" required></textarea>
+          <button type="submit" id="send" disabled>Kirim pesan</button>
+          <p class="status" id="status" role="status"></p>
+        </form>
+      </article>
+    </div>
+  </div>
+
+  <dialog id="dialog" aria-labelledby="d-title">
+    <div class="dlg">
+      <button class="close" type="button" id="d-close">Tutup</button>
+      <div id="d-thumb"></div>
+      <h3 id="d-title"></h3>
+      <p class="meta" id="d-meta"></p>
+      <p id="d-text"></p>
+      <div class="tags" id="d-tags"></div>
+      <a class="btn" id="d-link" target="_blank" rel="noopener" hidden>Lihat proyek</a>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
